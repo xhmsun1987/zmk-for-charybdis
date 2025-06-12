@@ -46,6 +46,27 @@
             #binding-cells = <0>;
             bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(250,100,50) &to 2>;
         };
+
+        wife: wife {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp I &kp F &kp E &kp I &kp S &kp LS(Y) &kp I &kp N &kp G &kp H &kp U &kp I &kp LS(L) &kp I>;
+            label = "WIFE";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        left_reset {
+            bindings = <&bootloader>;
+            key-positions = <0 1>;
+        };
+
+        right-reset {
+            bindings = <&bootloader>;
+            key-positions = <10 11>;
+        };
     };
 
     keymap {
@@ -89,7 +110,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans          &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &kp UP_ARROW    &trans           &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans          &trans           &trans  &wife
                         &trans  &trans  &trans    &trans  &trans
                                 &trans  &trans    &trans
             >;
